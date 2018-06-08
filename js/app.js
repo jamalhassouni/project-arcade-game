@@ -442,3 +442,10 @@ var input = function (e) {
     player.handleInput(allowedKeys[e.keyCode]);
 };
 document.addEventListener('keyup', input);
+
+// Prevents the window from scrolling up and down when the arrow keys are pressed.
+window.addEventListener("keydown", function (e) {
+    if ([38, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
