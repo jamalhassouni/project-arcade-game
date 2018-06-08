@@ -218,11 +218,11 @@ Gem.prototype.collisionDetected = function () {
     "use strict";
     this.x = 900;
     this.y = 900;
-    if(this.sprite == "images/Gem Blue.png"){
+    if (this.sprite == "images/Gem Blue.png") {
         player.playerScore += 100;
-    }else if(this.sprite == "images/Gem Green.png"){
+    } else if (this.sprite == "images/Gem Green.png") {
         player.playerScore += 50;
-    }else{
+    } else {
         player.playerScore += 30;
     }
     this.wait();
