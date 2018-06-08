@@ -5,7 +5,7 @@ frontend-nanodegree-arcade-game
 
 1. choose Your player.
 
-![Select Your player](Screenshots/select_player.png)
+![Select Your player](Screenshots/choose.png)
 
 2. Press enter to start the game.
 
