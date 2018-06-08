@@ -120,10 +120,12 @@ Enemy.prototype.randomSpeed = function () {
 Enemy.prototype.render = function () {
     "use strict";
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "#55efc4";
     ctx.font = "16px Comic Sans MS";
     ctx.fillText("Score: " + player.playerScore, 40, 70);
+    ctx.fillStyle = "#dfe6e9";
     ctx.fillText("Lives: " + player.playerLives, 141, 70);
+    ctx.fillStyle = "#ffeaa7";
     ctx.fillText("Difficulty: " + speedMultiplier, 260, 70);
 };
 // Check for collision. Borrowed from
@@ -216,7 +218,6 @@ Gem.prototype.collisionDetected = function () {
     "use strict";
     this.x = 900;
     this.y = 900;
-    console.log(this.sprite);
     if(this.sprite == "images/Gem Blue.png"){
         player.playerScore += 100;
     }else if(this.sprite == "images/Gem Green.png"){
