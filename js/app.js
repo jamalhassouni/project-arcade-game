@@ -180,6 +180,7 @@ Gem.prototype.update = function () {
 // Draw the gem to the screen
 Gem.prototype.render = function () {
     "use strict";
+
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 //Check for collision
@@ -215,14 +216,30 @@ Gem.prototype.collisionDetected = function () {
     "use strict";
     this.x = 900;
     this.y = 900;
-    player.playerScore += 30;
+    console.log(this.sprite);
+    if(this.sprite == "images/Gem Blue.png"){
+        player.playerScore += 100;
+    }else if(this.sprite == "images/Gem Green.png"){
+        player.playerScore += 50;
+    }else{
+        player.playerScore += 30;
+    }
     this.wait();
 };
 // Call setTimeout in a function so we can assign it to a variable
 // Necessary for clearTimeout(gem.gemWaitTime) to work
 Gem.prototype.wait = function () {
+    var random = Math.floor(Math.random() * 100) + 1;
+    if (random >= 60) {
+        this.sprite = 'images/Gem Blue.png';
+    } else if (random < 60 && random > 10) {
+        this.sprite = 'images/Gem Green.png';
+    } else {
+        this.sprite = 'images/Gem_Orange.png';
+    }
     this.gemWaitTime = setTimeout(function () {
         gem.gemReset(); // this.gemReset() doesn't work
+
     }, 5000);
 };
 // Reset the gem to a new location
@@ -233,6 +250,8 @@ Gem.prototype.gemReset = function () {
     // Gems appear at one of the following Y positions: 60, 145, 230
     this.y = (60 + (85 * Math.floor(Math.random() * 3) + 0));
 };
+
+
 
 /*----------------------------------------------------------------------------*/
 /*--------------------------------Heart Object Start ---------------------------------------*/
@@ -346,7 +365,7 @@ Player.prototype.success = function () {
     var audio = new Audio('audio/success.mp3');
     audio.play();
     "use strict";
-    this.playerScore += 20;
+    this.playerScore += 10;
     speedMultiplier += 5;
     this.characterReset();
 };
