@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div id="jsModal" class="modal">
+        <div class="modal__overlay jsOverlay"></div>
+        <div class="modal__container">
+            <div>
+                <h3>Select the player you want to play with</h3>
+                <div class="playerPic">
+                    <img class="Pic" src="images/char-boy.png" alt="char-boy">
+                    <img class="Pic" src="images/char-cat-girl.png" alt="char-cat-girl">
+                    <img class="Pic" src="images/char-horn-girl.png" alt="char-horn-girl">
+                    <img class="Pic" src="images/char-pink-girl.png" alt="char-pink-girl">
+                    <img class="Pic" src="images/char-princess-girl.png" alt="char-princess-girl">
+                </div>
+            </div>
+            <button class="modal__close jsModalClose">&#10005;</button>
+        </div>
+    </div>
+
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
 </body>
+
 </html>
