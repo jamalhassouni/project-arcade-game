@@ -376,6 +376,10 @@ Player.prototype.render = function () {
     // change sprite  when user select player
     this.sprite = localStorage.getItem("PlayerPic");
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    // Change the player's position when he reaches the sea
+   if(this.y == -15){
+     this.success();
+   }
 };
 // Move the player according to keys pressed
 Player.prototype.handleInput = function (allowedKeys) {
@@ -396,7 +400,7 @@ Player.prototype.handleInput = function (allowedKeys) {
         case "up":
             //check if player reached top of water, if so call success function,
             // otherwise move up
-            if (this.y < 0) {
+            if (this.y < 0 ) {
                 this.success();
             } else {
                 this.y -= 83;
